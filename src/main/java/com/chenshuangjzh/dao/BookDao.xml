@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kaishengit.dao.BookDao">
+	
+	<insert id="save" parameterType="Book">
+		INSERT INTO book(CODE,NAME,author,publish,total,nowcount) VALUES(#{code},#{name},#{author},#{publish},#{total},#{nowcount})
+	</insert>
+	
+	<select id="findByParam" parameterType="map" resultType="list" resultMap="bookMap">
+		select * from book
+		<where>
+			<if test="q_name != null and q_name != ''">
+				name like '%${q_name}%'
+			</if>
+			<if test="q_author != null and q_author != ''">
+				and author = #{q_author}
+			</if>
+			<if test="q_publish != null and q_publish != ''">
+				and publish = #{q_publish}
+			</if>
+		</where>
+		<choose>
+			<when test="start == null or start == ''">
+				limit 0,2
+			</when>
+			<otherwise>
+				limit #{start},2
+			</otherwise>
+		</choose>
+		
+	</select>
+	
+	<resultMap type="Book" id="bookMap">
+		<id property="id" column="id"/>
+		<result property="name" column="name"/>
+		<result property="author" column="author"/>
+		<result property="publish" column="publish"/>
+		<result property="total" column="total"/>
+		<result property="nowcount" column="nowcount"/>
+		<result property="code" column="code"/>
+	</resultMap>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+</mapper>
