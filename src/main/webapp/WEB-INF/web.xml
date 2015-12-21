@@ -3,6 +3,12 @@
          version="2.4">
   <display-name>Archetype Created Web Application</display-name>
 
+  <!--Spring容器-->
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+
+  <!-- spring配置文件 -->
   <context-param>
     <param-name>contextConfigLocation</param-name>
     <param-value>classpath:spring-mvc.xml</param-value>
@@ -21,11 +27,6 @@
     <filter-name>encodingFilter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
-
-  <!--Spring容器-->
-  <listener>
-    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-  </listener>
 
   <!-- SpringMVC中央控制器 -->
   <servlet>

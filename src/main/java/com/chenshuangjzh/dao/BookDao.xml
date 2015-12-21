@@ -40,14 +40,5 @@
 		<result property="nowcount" column="nowcount"/>
 		<result property="code" column="code"/>
 	</resultMap>
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 </mapper>
