@@ -18,7 +18,14 @@ public class BookController {
 
 	@Inject
 	private BookService bookService;
-	
+
+	@RequestMapping(value = "/test",method = RequestMethod.GET)
+	public String test(Model model){
+		Book book = (Book) bookService.findById(1);
+		model.addAttribute("book",book);
+		return "book";
+	}
+
 	@RequestMapping(value="/add",method=RequestMethod.GET)
 	public String toAdd() {
 		return "book/add";
@@ -51,10 +58,5 @@ public class BookController {
 		redirectAttributes.addFlashAttribute("message","�޸ĳɹ�");
 		return "redirect:/book";
 	}
-	
-	
-	
-	
-	
-	
+
 }
