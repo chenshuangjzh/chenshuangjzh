@@ -1,5 +1,6 @@
 package com.chenshuangjzh.test;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -8,9 +9,10 @@ import java.util.Date;
  */
 public class TimeTest {
     public static void main(String[] args) {
-        long time = 13603956734587420L;
-        String date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date(time / 10));
+        long time = 13603956734587420L;//2013-02-09 15:41:13
+        String date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date(time / 10000));
         System.out.println(date);
+
     }
 
     /*public static void main(String[] args) {

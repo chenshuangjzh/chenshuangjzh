@@ -103,7 +103,7 @@ public class QiniuUpload {
                 long fsize = fileInfo.fsize;
                 String hash = fileInfo.hash;
                 String key = fileInfo.key;
-                String uploadTime = new DateTime(fileInfo.putTime).toString(dtf);
+                String uploadTime = new DateTime(fileInfo.putTime / 10000).toString(dtf);
                 String mimeType = fileInfo.mimeType;
                 picture.setUploadTime(uploadTime);
                 picture.setPictureName(key);
