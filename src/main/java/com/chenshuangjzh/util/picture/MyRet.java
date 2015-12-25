@@ -1,4 +1,4 @@
-package com.chenshuangjzh.util;
+package com.chenshuangjzh.util.picture;
 
 /**
  * Created by jiangzhenghui on 15/12/21.

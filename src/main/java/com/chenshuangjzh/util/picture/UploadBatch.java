@@ -1,4 +1,4 @@
-package com.chenshuangjzh.util;
+package com.chenshuangjzh.util.picture;
 
 import com.qiniu.common.QiniuException;
 
@@ -30,12 +30,14 @@ public class UploadBatch {
     public List<MyRet> batchUpload() throws QiniuException {
         File file = new File(fileDirectory);
         if(file.isDirectory()){
+            System.out.println("is Directory");
             FilenameFilter filenameFilter = new FilenameFilter() {
                 public boolean accept(File dir, String name) {
                     return name.endsWith("jpeg");
                 }
             };
             File[] files = file.listFiles(filenameFilter);
+            System.out.println("find " + files.length + " pictures");
             if(files != null && files.length != 0){
                 QiniuUpload qiniuUpload = new QiniuUpload();
                 List<MyRet> retList = new ArrayList<MyRet>();
@@ -45,6 +47,8 @@ public class UploadBatch {
                 }
                 return retList;
             }
+        }else {
+            System.out.println("is not a directory");
         }
         return null;
     }
