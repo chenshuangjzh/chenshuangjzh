@@ -10,6 +10,7 @@
 <html>
 <head>
     <title>Book Test</title>
+    <link rel="shortcut icon" href="/favicon.ico">
 </head>
 <body>
     <h3>Book name ： ${book.name}</h3>

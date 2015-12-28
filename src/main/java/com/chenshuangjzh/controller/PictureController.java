@@ -56,4 +56,14 @@ public class PictureController extends BaseController {
             }
         }
     }
+
+    @RequestMapping(value = "correctPictureTime",method = RequestMethod.GET)
+    public void correctPictureTime(){
+        pictureService.correctUploadTime();
+    }
+
+    @RequestMapping(value = "fillPictureWH",method = RequestMethod.GET)
+    public void fillPictureWH(){
+        pictureService.fillWH();
+    }
 }

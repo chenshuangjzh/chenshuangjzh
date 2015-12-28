@@ -3,18 +3,18 @@
          version="2.4">
   <display-name>Archetype Created Web Application</display-name>
 
-  <!--Spring容器-->
+  <!--Spring container-->
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
 
-  <!-- spring配置文件 -->
+  <!-- spring mybatis -->
   <context-param>
     <param-name>contextConfigLocation</param-name>
-    <param-value>classpath:spring-mvc.xml</param-value>
+    <param-value>classpath:spring-mybatis.xml</param-value>
   </context-param>
 
-  <!-- 字符集过滤器 -->
+  <!-- char encoding -->
   <filter>
     <filter-name>encodingFilter</filter-name>
     <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -28,7 +28,7 @@
     <url-pattern>/*</url-pattern>
   </filter-mapping>
 
-  <!-- SpringMVC中央控制器 -->
+  <!-- SpringMVC -->
   <servlet>
     <servlet-name>mvc</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>

@@ -15,5 +15,10 @@
         <result property="width" column="width"/>
         <result property="height" column="height"/>
         <result property="hash" column="hash"/>
+        <result property="mimeType" column="mime_type"/>
     </resultMap>
+
+    <select id="findByName" parameterType="string" resultMap="pictureMap" resultType="Picture">
+        SELECT * FROM picture WHERE picture_name = #{name}
+    </select>
 </mapper>

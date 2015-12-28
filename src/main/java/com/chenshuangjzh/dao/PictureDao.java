@@ -3,6 +3,7 @@ package com.chenshuangjzh.dao;
 import com.chenshuangjzh.pojo.Picture;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import javax.inject.Named;
 import java.util.List;
@@ -14,10 +15,15 @@ import java.util.List;
 public interface PictureDao {
 
     @Insert("insert into picture(picture_name,upload_time,size,width,height,hash,mime_type) values(#{pictureName},#{uploadTime},#{size},#{width},#{height},#{hash},#{mimeType})")
-    public void save(Picture picture);
+    void save(Picture picture);
 
     @Select("select * from picture where hash = #{hash}")
-    public Picture findByHash(String hash);
+    Picture findByHash(String hash);
 
-    public List<Picture> findAll();
+    List<Picture> findAll();
+
+    @Update("update picture set picture_name = #{pictureName},upload_time = #{uploadTime},size = #{size},width = #{width},height = #{height},hash = #{hash},mime_type = #{mimeType} where id = #{id}")
+    void update(Picture picture);
+
+    Picture findByName(String name);
 }
