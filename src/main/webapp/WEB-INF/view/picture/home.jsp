@@ -17,56 +17,39 @@
     </jsp:include>
     <div class="container">
         <div class="row">
-            <div class="col-xs-2 col-xs-offset-1">
-                <img src="/static/img/example.jpg" class="img-responsive">
-            </div>
-            <div class="col-xs-2">
-                <img src="/static/img/example.jpg" class="img-responsive">
-            </div>
-            <div class="col-xs-2">
-                <img src="/static/img/example.jpg" class="img-responsive">
-            </div>
-            <div class="col-xs-2">
-                <img src="/static/img/example.jpg" class="img-responsive">
-            </div>
-            <div class="col-xs-2">
-                <img src="/static/img/example.jpg" class="img-responsive">
+            <div class="col-xs-10 col-xs-offset-1">
+                <c:forEach items="${pictureList}" var="picture">
+                    <c:if test="${picture.width == 5184}">
+                        <div class="col-xs-10 col-lg-2 imgTop">
+                            <img src="http://7xpdj0.com1.z0.glb.clouddn.com/${picture.pictureName}?imageView2/2/w/230" class="img-responsive img-thumbnail">
+                        </div>
+                    </c:if>
+                </c:forEach>
             </div>
         </div>
-        <div class="row moreRow">
-            <div class="col-xs-2 col-xs-offset-1">
-                <img src="/static/img/example.jpg" class="img-responsive">
-            </div>
-            <div class="col-xs-2">
-                <img src="/static/img/example.jpg" class="img-responsive">
-            </div>
-            <div class="col-xs-2">
-                <img src="/static/img/example.jpg" class="img-responsive">
-            </div>
-            <div class="col-xs-2">
-                <img src="/static/img/example.jpg" class="img-responsive">
-            </div>
-            <div class="col-xs-2">
-                <img src="/static/img/example.jpg" class="img-responsive">
+        <div class="row otherRow">
+            <div class="col-xs-10 col-xs-offset-1">
+                <c:forEach items="${pictureList}" var="picture">
+                    <c:if test="${picture.height == 5184}">
+                        <div class="col-xs-10 col-lg-2 imgTop">
+                            <img src="http://7xpdj0.com1.z0.glb.clouddn.com/${picture.pictureName}?imageView2/2/w/230" class="img-responsive img-thumbnail">
+                        </div>
+                    </c:if>
+                </c:forEach>
             </div>
         </div>
-        <div class="row moreRow">
-            <div class="col-xs-2 col-xs-offset-1">
-                <img src="/static/img/example.jpg" class="img-responsive">
-            </div>
-            <div class="col-xs-2">
-                <img src="/static/img/example.jpg" class="img-responsive">
-            </div>
-            <div class="col-xs-2">
-                <img src="/static/img/example.jpg" class="img-responsive">
-            </div>
-            <div class="col-xs-2">
-                <img src="/static/img/example.jpg" class="img-responsive">
-            </div>
-            <div class="col-xs-2">
-                <img src="/static/img/example.jpg" class="img-responsive">
-            </div>
+        <div class="row">
+            <div class="emptyDiv"></div>
         </div>
     </div>
+
+    <script src="/static/js/jquery-1.11.3.min.js"></script>
+    <script src="/static/plugin/bootstrap/js/bootstrap.min.js"></script>
+
+    <script>
+        $(function(){
+            $(".dropdown-toggle").dropdown();
+        });
+    </script>
 </body>
 </html>

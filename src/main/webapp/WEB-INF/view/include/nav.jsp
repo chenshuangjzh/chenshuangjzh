@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -16,7 +16,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li class="${param.current == 'our' ? 'active' : ''}"><a ${param.current == 'our' ? '' : 'href="/picture/all"'}>Our <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">Link</a></li>
+                <li class="${param.current == 'times' ? 'active' : ''}"><a ${param.current == 'times' ? '' : 'href="javascript:;" id="times"'}>Times</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                     <ul class="dropdown-menu">
