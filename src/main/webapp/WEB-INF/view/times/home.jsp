@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>chenshuangjzh</title>
     <link rel="stylesheet" href="/static/plugin/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/css/style.css"/>
+    <link rel="stylesheet" href="/static/css/style_times.css"/>
     <link rel="shortcut icon" href="/favicon.ico"/>
 </head>
 <body ng-controller="TimeController">
@@ -16,12 +16,54 @@
 </jsp:include>
 
 <div class="container">
-    <input ng-model="timeUtil.time">
-    <input ng-model="timeUtil.day">
-    <input ng-model="timeUtil.hour">
-    <input ng-model="timeUtil.minute">
-    <input value="{{timeUtil.second | secondFilter}}">
-    <input ng-model="timeUtil.millisecond">
+
+    <div class="row">
+        <div class="emptyDiv"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <label class="center-block">We have been together for</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="center-block-ms-head">{{timeUtil.time}}<label class="ms-head-unit">ms</label></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="corresponding-row">
+                <label>corresponding to</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="time-separate-unit">
+                <label>Day</label>
+                <label class="time-separate-unit-margin">Hour</label>
+                <label class="time-separate-unit-margin">Minute</label>
+                <label class="time-separate-unit-margin">Second</label>
+                <label class="time-separate-unit-margin">Millisecond</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div>
+                <label class="time-separate-content-day-margin">{{timeUtil.day}}</label>
+                <label class="time-separate-content-hour-margin">{{timeUtil.hour | timeFilter}}</label>
+                <label class="time-separate-content-minute-margin">{{timeUtil.minute | timeFilter}}</label>
+                <label class="time-separate-content-second-margin">{{timeUtil.second | timeFilter}}</label>
+                <label class="time-separate-content-millisecond-margin">{{timeUtil.millisecond | millisecondFilter}}</label>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script src="/static/js/jquery-1.11.3.min.js"></script>
@@ -32,7 +74,7 @@
 <script>
     var timeAppModule = angular.module("timeApp",[]);
 
-    timeAppModule.filter("secondFilter",function(){
+    timeAppModule.filter("timeFilter",function(){
         return function(input){
             if(input.toString().length == 1){
                 return "0" + input;
@@ -42,10 +84,28 @@
         }
     });
 
+    timeAppModule.filter("millisecondFilter",function(){
+        return function(input){
+            if(input.toString().length == 1){
+                return "00" + input;
+            }else if(input.toString().length == 2){
+                return "0" + input;
+            }else{
+                return input;
+            }
+        }
+    });
+
     timeAppModule.controller("TimeController",function($scope,$interval){
         var requestBegin = Cookies.get("requestBegin");
-        var currentMilliseconds = new Date().getMilliseconds();
-        var costMilliseconds = currentMilliseconds - requestBegin;
+        var costMilliseconds;
+        if(!requestBegin){
+            Cookies.remove("requestBegin");
+            var currentMilliseconds = new Date().getMilliseconds();
+            costMilliseconds = currentMilliseconds - requestBegin;
+        }else{
+            costMilliseconds = 0;
+        }
 
         $scope.timeUtil = {};
 

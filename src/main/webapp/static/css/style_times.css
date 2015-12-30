@@ -1,0 +1,49 @@
+body{
+    margin-top: 70px;
+}
+.emptyDiv{
+    height:50px;
+}
+.center-block{
+    font-size:35px;
+    text-align:center;
+}
+.center-block-ms-head{
+    text-align:center;
+    font-size: 35px;
+    color:#777;
+}
+.ms-head-unit{
+    color: #3c3c3c;
+    font-size: 20px;
+    margin-left: 3px;
+}
+.time-separate-unit{
+    text-align: center;
+    font-size:20px;
+}
+.time-separate-unit-margin {
+    margin-left: 120px;
+}
+.corresponding-row{
+    text-align:center;
+    font-size:14px;
+    color: #b92c28;
+    height:80px;
+    line-height: 80px;
+}
+.time-separate-content-hour-margin{
+    margin-left: 140px;
+}
+.time-separate-content-minute-margin{
+    margin-left: 165px;
+}
+.time-separate-content-second-margin{
+    margin-left: 174px;
+}
+.time-separate-content-millisecond-margin{
+    margin-left: 195px;
+}
+.time-separate-content-day-margin{
+    margin-left:155px;
+}
