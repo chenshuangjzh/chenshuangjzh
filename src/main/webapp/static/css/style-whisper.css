@@ -53,7 +53,18 @@ body{
     height:30px;
 }
 .whisper-new-girl{
-    border:2px solid palevioletred;
+     border:2px solid palevioletred;
+     width:500px;
+     height:197px;
+     position:absolute;
+     top:20%;
+     left:100px;
+     background-color:#FFF;
+     border-radius:6px;
+     z-index:99;
+ }
+.whisper-new-boy{
+    border:2px solid lightskyblue;
     width:500px;
     height:197px;
     position:absolute;
