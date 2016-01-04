@@ -1,6 +1,7 @@
 package com.chenshuangjzh.dao;
 
 import com.chenshuangjzh.pojo.Whisper;
+import org.apache.ibatis.annotations.Insert;
 
 import javax.inject.Named;
 import java.util.List;
@@ -12,4 +13,7 @@ import java.util.List;
 public interface WhisperDao {
 
     List<Whisper> findAll();
+
+    @Insert("insert into whisper(content,create_time,publisher) values(#{content},#{createTime},#{publisher})")
+    void save(Whisper whisper);
 }

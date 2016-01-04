@@ -70,6 +70,7 @@
 <script src="/static/plugin/bootstrap/js/bootstrap.min.js"></script>
 <script src="/static/js/js.cookie.js"></script>
 <script src="/static/js/angular.min.js"></script>
+<script src="/static/js/nav.js"></script>
 
 <script>
     var timeAppModule = angular.module("timeApp",[]);
@@ -144,12 +145,6 @@
                 }
             }
         },4);
-    });
-</script>
-
-<script>
-    $(function(){
-        $(".dropdown-toggle").dropdown();
     });
 </script>
 </body>

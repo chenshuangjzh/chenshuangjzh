@@ -48,6 +48,7 @@ body{
 .whisper-container{
     background-color: #ffdfcc;
     border-radius:8px;
+    margin-bottom:10px;
 }
 .whisper-blank{
     height:30px;
@@ -56,9 +57,9 @@ body{
      border:2px solid palevioletred;
      width:500px;
      height:197px;
-     position:absolute;
+     position:fixed;
      top:20%;
-     left:100px;
+     left:30%;
      background-color:#FFF;
      border-radius:6px;
      z-index:99;
@@ -67,9 +68,9 @@ body{
     border:2px solid lightskyblue;
     width:500px;
     height:197px;
-    position:absolute;
+    position:fixed;
     top:20%;
-    left:100px;
+    left:30%;
     background-color:#FFF;
     border-radius:6px;
     z-index:99;
@@ -108,7 +109,4 @@ body{
     background-color: #F3FAFF;
     text-align: center;
     padding-bottom: 10px;
-}
-.push-btn{
-
 }
