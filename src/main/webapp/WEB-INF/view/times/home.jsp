@@ -29,7 +29,7 @@
 
     <div class="row">
         <div class="col-xs-12">
-            <div class="center-block-ms-head">{{timeUtil.time}}<label class="ms-head-unit">ms</label></div>
+            <div class="center-block-ms-head" ng-cloak>{{timeUtil.time}}<label class="ms-head-unit">ms</label></div>
         </div>
     </div>
 
@@ -56,11 +56,11 @@
     <div class="row">
         <div class="col-xs-12">
             <div>
-                <label class="time-separate-content-day-margin">{{timeUtil.day}}</label>
-                <label class="time-separate-content-hour-margin">{{timeUtil.hour | timeFilter}}</label>
-                <label class="time-separate-content-minute-margin">{{timeUtil.minute | timeFilter}}</label>
-                <label class="time-separate-content-second-margin">{{timeUtil.second | timeFilter}}</label>
-                <label class="time-separate-content-millisecond-margin">{{timeUtil.millisecond | millisecondFilter}}</label>
+                <label class="time-separate-content-day-margin font-gray" ng-cloak>{{timeUtil.day}}</label>
+                <label class="time-separate-content-hour-margin font-gray" ng-cloak>{{timeUtil.hour | timeFilter}}</label>
+                <label class="time-separate-content-minute-margin font-gray" ng-cloak>{{timeUtil.minute | timeFilter}}</label>
+                <label class="time-separate-content-second-margin font-gray" ng-cloak>{{timeUtil.second | timeFilter}}</label>
+                <label class="time-separate-content-millisecond-margin font-gray" ng-cloak>{{timeUtil.millisecond | millisecondFilter}}</label>
             </div>
         </div>
     </div>
