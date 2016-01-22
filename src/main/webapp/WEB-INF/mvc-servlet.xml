@@ -16,6 +16,7 @@ http://www.springframework.org/schema/mvc http://www.springframework.org/schema/
 
     <!-- static source -->
     <mvc:resources mapping="/favicon.ico" location="/"/>
+    <mvc:resources mapping="/*.html" location="/"/>
     <mvc:resources mapping="/**" location="/static"/>
 
     <!-- view analyzer -->
