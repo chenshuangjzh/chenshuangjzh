@@ -27,22 +27,43 @@
             </form>
             --%>
             <ul class="nav navbar-nav navbar-right">
-                <li>
+                <li id="signContainer">
                     <div class="g-signin2" data-onsuccess="onSignIn"></div>
                 </li>
-                <%--<li><a href="#">Link</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                <li class="dropdown" id="signOutContainer" style="display: none">
+                    <a id="userEmail" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
+                        <li><a href="javascript:;" id="signOut">Sign out</a></li>
                     </ul>
-                </li>--%>
+                </li>
+                <li>
+                    <img id="userImage" class="img-circle" width="25px" style="margin-top:12.5px;margin-right:6px;">
+                </li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
-<script src="/static/js/platform.js" async defer></script>
+<script src="/static/js/jquery-1.11.3.min.js"></script>
+<script>
+    function onSignIn(googleUser) {
+        $("#signContainer").hide();
+        var profile = googleUser.getBasicProfile();
+        /*var id_token = googleUser.getAuthResponse().id_token;
+        console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+        console.log('Name: ' + profile.getName());
+        console.log('Image URL: ' + profile.getImageUrl());
+        console.log('Email: ' + profile.getEmail());
+        console.log('Id_token:' + id_token);*/
+        $("#userEmail").html(profile.getEmail() + " <span class='caret'></span>");
+        $("#userImage").attr("src",profile.getImageUrl());
+        $("#signOutContainer").show();
+    }
+
+    $("#signOut").click(function(){
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function () {
+            window.location.href = window.location.href;
+        });
+    });
+</script>
+<script  src = "/static/js/platform.js"  async  defer ></script>
