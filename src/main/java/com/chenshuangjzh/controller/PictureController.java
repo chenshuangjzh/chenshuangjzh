@@ -8,10 +8,14 @@ import com.chenshuangjzh.util.picture.UploadBatch;
 import com.chenshuangjzh.util.properties.PropertyUtil;
 import com.qiniu.common.QiniuException;
 import com.qiniu.storage.model.FileInfo;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import javax.inject.Inject;
 import java.util.List;
 
@@ -24,6 +28,13 @@ public class PictureController extends BaseController {
 
     @Inject
     private PictureService pictureService;
+
+    @RequestMapping(value = "search",method = RequestMethod.GET)
+    public String search(Model model,@RequestParam String q){
+        List<Picture> pictureList = pictureService.search(q);
+        model.addAttribute("pictureList",pictureList);
+        return "picture/home";
+    }
 
     @RequestMapping(value = "all",method = RequestMethod.GET)
     public String getAll(Model model){

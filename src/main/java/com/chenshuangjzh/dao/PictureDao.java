@@ -26,4 +26,6 @@ public interface PictureDao {
     void update(Picture picture);
 
     Picture findByName(String name);
+
+    List<Picture> search(String q);
 }

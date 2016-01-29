@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription  xmlns="http://a9.com/-/spec/opensearch/1.1/">
+    <InputEncoding>UTF-8</InputEncoding>
+    <ShortName>chenshuangjzh</ShortName>
+    <Description>chenshaungjzh search for Ours</Description>
+    <Image height="16" width="16" type="image/vnd.microsoft.icon">http://www.chenshuangjzh.party/favicon.ico</Image>
+    <Url type="text/html" template="http://www.chenshuangjzh.party/picture/search?q={searchTerms}"/>
+</OpenSearchDescription>

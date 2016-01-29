@@ -25,6 +25,10 @@ public class PictureService {
     @Inject
     private PictureDao pictureDao;
 
+    public List<Picture> search(String q){
+        return pictureDao.search(q);
+    }
+
     /**
      * save picture information to db
      * @param picture

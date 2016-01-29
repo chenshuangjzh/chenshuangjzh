@@ -21,4 +21,8 @@
     <select id="findByName" parameterType="string" resultMap="pictureMap" resultType="Picture">
         SELECT * FROM picture WHERE picture_name = #{name}
     </select>
+
+    <select id="search" parameterType="string" resultMap="pictureMap" resultType="list">
+        SELECT * FROM picture WHERE picture_name LIKE CONCAT(CONCAT('%', #{q}), '%');
+    </select>
 </mapper>

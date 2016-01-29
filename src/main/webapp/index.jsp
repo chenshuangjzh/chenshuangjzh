@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/static/css/style_index.css">
     <link rel="shortcut icon" href="/favicon.ico"/>
+    <link rel="search" type="application/opensearchdescription+xml" href="/static/xml/opensearch.xml" title="chenshuangjzh" />
 </head>
 <body>
     <jsp:include page="/WEB-INF/view/include/nav.jsp"/>
