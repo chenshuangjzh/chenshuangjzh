@@ -18,7 +18,7 @@
                 <li class="${param.current == 'our' ? 'active' : ''}"><a ${param.current == 'our' ? '' : 'href="/picture/all"'}>Our <span class="sr-only">(current)</span></a></li>
                 <li class="${param.current == 'times' ? 'active' : ''}"><a ${param.current == 'times' ? '' : 'href="javascript:;" id="times"'}>Times</a></li>
                 <li class="${param.current == 'whisper' ? 'active' : ''}"><a ${param.current == 'whisper' ? '' : 'href="/whisper/all"'}>Whisper</a></li>
-                <li class="${param.current == 'writing' ? 'active' : ''}"><a ${param.current == 'writing' ? '' : 'href="/writing/all"'}>Writing</a></li>
+                <li class="${param.current == 'writing' || param.current == 'writing-new' ? 'active' : ''}"><a ${param.current == 'writing' ? '' : 'href="/writing/all"'}>Writing</a></li>
             </ul>
             <%--<form class="navbar-form navbar-left" role="search">
                 <div class="form-group">

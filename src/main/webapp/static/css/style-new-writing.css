@@ -1,0 +1,23 @@
+.editor{
+    margin-top:20px;
+}
+.simditor-body{
+    height:800px;
+}
+.bottomInfo{
+    height:20px;
+    width:100%;
+    opacity:0;
+}
+.writingTitle{
+    margin-top:80px;
+}
+#titleArea{
+    resize: none;
+    width:863px;
+    height:40px;
+    border:1px solid #C9D8DB;
+    font-size:20px;
+    line-height: 40px;
+    overflow-y:hidden;
+}

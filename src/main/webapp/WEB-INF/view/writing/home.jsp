@@ -9,6 +9,7 @@
     <title>chenshuangjzh</title>
     <link rel="stylesheet" href="/static/plugin/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/static/css/style-writing.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="/favicon.ico"/>
 </head>
 <body>
@@ -55,8 +56,15 @@
                 <label>再见野孩子——杨千嬅的少女情愁</label>
             </div>
         </div>
-        <div class="col-xs-3">
-
+        <div class="col-xs-3 nav-right">
+            <div class="userInfoContainer"></div>
+            <div class="userInfo2"></div>
+            <div class="userInfo2"></div>
+        </div>
+        <div class="col-xs-1">
+            <div class="addArticle">
+                <a href="/writing/new"><i class="fa fa-pencil-square-o"></i></a>
+            </div>
         </div>
     </div>
     <div class="row">

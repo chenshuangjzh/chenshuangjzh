@@ -17,6 +17,11 @@ public class WritingController extends BaseController {
     @Inject
     private WritingService writingService;
 
+    @RequestMapping(value = "new",method = RequestMethod.GET)
+    public String newWriting(){
+        return "writing/new";
+    }
+
     @RequestMapping(value = "all",method = RequestMethod.GET)
     public String all(){
         return "writing/home";
