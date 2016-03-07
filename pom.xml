@@ -86,7 +86,6 @@
       <version>${slf4j.version}</version>
     </dependency>
 
-
     <!--SpringMVC-->
     <dependency>
       <groupId>org.springframework</groupId>
@@ -153,8 +152,6 @@
       <artifactId>jackson-mapper-asl</artifactId>
       <version>1.9.13</version>
     </dependency>
-
-
 
   </dependencies>
 
